@@ -55,19 +55,18 @@ function ImageLightbox({ src, alt, Wrapper = "div" }) {
       <>
         {couroselData.map((slide, index) => {
           return (
-            <div>
+            <div key={slide.id}>
               {index === current && (
-                <img src={slide.image} key={slide.id} alt="shoe image" />
+                <img src={slide.image} key={slide.id} alt="shoe" />
               )}
             </div>
           );
         })}
         {couroselData.map((slide, index) => {
           return (
-            <div>
+            <div key={slide.id}>
               <img
                 src={slide.thumbnail}
-                key={slide.id}
                 className={`${
                   index === current ? "border-2 border-solid" : null
                 }`}
