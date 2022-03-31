@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { priceChange, addQty, minusQty, discount } from "../redux";
 import { connect } from "react-redux";
 import upButton from "./images/icon-plus.svg";
@@ -7,8 +7,16 @@ import cart from "./images/icon-cart.svg";
 import ImageLight from "./ImageLight";
 
 function Content(props) {
-  const discountPrice = +props.disc * +props.price;
-  const price = +props.price;
+  const [discountPrice, setDiscountPrice] = useState(0);
+  const [price, setPrice] = useState(0);
+
+  useEffect(() => {
+    const discountPrice = +props.disc * +props.price;
+    const price = +props.price;
+    setDiscountPrice(discountPrice);
+    setPrice(price);
+  }, []);
+
   return (
     <div>
       <>
@@ -36,7 +44,7 @@ function Content(props) {
           <h2>{props.number}</h2>
           <img src={upButton} alt="plus logo" onClick={props.addNumber} />
         </div>
-        <button>
+        <button onClick={() => props.setClick(!props.click)}>
           <img src={cart} alt="cart icon" /> Add to Cart
         </button>
       </div>
