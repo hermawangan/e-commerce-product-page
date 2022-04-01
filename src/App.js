@@ -9,7 +9,7 @@ function App() {
   const [click, setClick] = useState(false);
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className="App font-Kumbh">
         <Nav setClick={setClick} click={click} />
         <Content setClick={setClick} click={click} />
       </div>
