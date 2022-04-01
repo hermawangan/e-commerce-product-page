@@ -44,7 +44,7 @@ function Content(props) {
           <h2>{props.number}</h2>
           <img src={upButton} alt="plus logo" onClick={props.addNumber} />
         </div>
-        <button onClick={() => props.setClick(!props.click)}>
+        <button onClick={() => props.setClick(true)}>
           <img src={cart} alt="cart icon" /> Add to Cart
         </button>
       </div>

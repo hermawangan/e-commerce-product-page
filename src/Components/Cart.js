@@ -1,33 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { cartAction } from "../redux";
 import thumbnail from "./images/image-product-1-thumbnail.jpg";
+import basketDelete from "./images/icon-delete.svg";
 
-function Cart({ addItem, cartAction, price, number, disc }) {
+function Cart({ price, number, disc, click, setClick }) {
+  const [discountPrice, setDiscountPrice] = useState(0);
+
+  useEffect(() => {
+    const discountPrice = +disc * price;
+    setDiscountPrice(discountPrice);
+  }, [click, disc, price]);
+
+  const clickDeleteHandler = () => {
+    setClick(false);
+  };
+
   return (
-    <div>
-      <img src={thumbnail} />
+    <>
+      {click ? (
+        <div>
+          <img src={thumbnail} alt="thumbnail" />
 
-      <div>
-        <p>Fall Limited Edition Sneakers</p>
-      </div>
-    </div>
+          <div>
+            <div>
+              <p>Fall Limited Edition Sneakers</p>
+              <h2>${discountPrice.toFixed(2)}</h2>
+              <span>X {number} </span>{" "}
+              <span>${number * discountPrice.toFixed(2)}</span>
+            </div>
+            <div>
+              <img
+                src={basketDelete}
+                alt="dusbin"
+                onClick={clickDeleteHandler}
+              />
+            </div>
+          </div>
+
+          <button>Checkout</button>
+        </div>
+      ) : (
+        <p>Your cart is empty.</p>
+      )}
+    </>
   );
 }
 
 const mapStateToProps = (state) => {
   return {
-    addeddItem: state.cart.addeddItem,
     price: state.price.price,
     number: state.qty.qty,
     disc: state.disc.discount,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    cartAction: (id) => dispatch(cartAction(id)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps)(Cart);
