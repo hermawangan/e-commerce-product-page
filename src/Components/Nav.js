@@ -6,6 +6,7 @@ import Cart from "./Cart";
 
 function Nav({ click, setClick }) {
   const [mouseOver, setMouseOver] = useState(false);
+  const [burgerClick, setBurgerClick] = useState(false);
 
   const mouseHover = () => {
     setMouseOver(true);
@@ -17,27 +18,30 @@ function Nav({ click, setClick }) {
 
   return (
     <>
-      <div>
-        <img src={logo} alt="brand logo" />
-        <div>
-          <ul>
-            <li>
-              <a href="#">Collections</a>
-            </li>
-            <li>
-              <a href="#">Men</a>
-            </li>
-            <li>
-              <a href="#">Women</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
+      <div className=" flex justify-between">
+        <div className=" flex md:flex-row flex-col">
+          <img src={logo} alt="brand logo" className="w-1/2 h-1/2" />
+          <div className="bg-white">
+            <ul className="flex justify-between md:flex-row flex-col ">
+              <li className="p-6">
+                <a href="#">Collections</a>
+              </li>
+              <li className="p-6">
+                <a href="#">Men</a>
+              </li>
+              <li className="p-6">
+                <a href="#">Women</a>
+              </li>
+              <li className="p-6">
+                <a href="#">About</a>
+              </li>
+              <li className="p-6">
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
+
         <div>
           <img src={cart} alt="cart icon" onMouseOver={mouseHover} />
           {click ? <span>1</span> : null}
