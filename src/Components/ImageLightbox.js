@@ -10,7 +10,7 @@ import productFour from "./images/image-product-4.jpg";
 import nextIcon from "./images/icon-next.svg";
 import prevIcon from "./images/icon-previous.svg";
 
-function ImageLightbox({ src, alt, Wrapper = "div" }) {
+function ImageLightbox({ src = 0, alt, Wrapper = "div" }) {
   const [current, setCurrent] = useState(src);
 
   const [couroselData, setCouroselData] = useState([
@@ -45,11 +45,17 @@ function ImageLightbox({ src, alt, Wrapper = "div" }) {
   };
 
   return (
-    <Wrapper>
-      <button className="left-button" onClick={prev}>
+    <Wrapper className="md:relative md:w-1/3 md:left-1/3">
+      <button
+        className="left-button absolute top-1/3 left-5 bg-white rounded-full w-9 h-9 flex justify-center items-center border-2 border-white md:-left-4"
+        onClick={prev}
+      >
         <img src={prevIcon} alt="prev Icon" />
       </button>
-      <button className="right-button" onClick={next}>
+      <button
+        className="right-button absolute right-5 top-1/3 bg-white rounded-full w-9 h-9 flex justify-center items-center border-2 border-white md:-right-4"
+        onClick={next}
+      >
         <img src={nextIcon} alt="next Icon" />
       </button>
       <>
@@ -57,25 +63,34 @@ function ImageLightbox({ src, alt, Wrapper = "div" }) {
           return (
             <div key={slide.id}>
               {index === current && (
-                <img src={slide.image} key={slide.id} alt="shoe" />
+                <img
+                  src={slide.image}
+                  key={slide.id}
+                  alt="shoe"
+                  className="md:rounded-xl"
+                />
               )}
             </div>
           );
         })}
-        {couroselData.map((slide, index) => {
-          return (
-            <div key={slide.id}>
-              <img
-                src={slide.thumbnail}
-                className={`${
-                  index === current ? "border-2 border-solid" : null
-                }`}
-                alt={alt}
-                onClick={() => setCurrent(index)}
-              />
-            </div>
-          );
-        })}
+        <div className="hidden md:flex justify-around mt-4">
+          {couroselData.map((slide, index) => {
+            return (
+              <div key={slide.id} className="">
+                <img
+                  src={slide.thumbnail}
+                  className={`${
+                    index === current
+                      ? "border-2 border-primary-Orange opacity-75"
+                      : null
+                  } rounded-xl h-16 hover:opacity-50 cursor-pointer`}
+                  alt={alt}
+                  onClick={() => setCurrent(index)}
+                />
+              </div>
+            );
+          })}
+        </div>
       </>
     </Wrapper>
   );

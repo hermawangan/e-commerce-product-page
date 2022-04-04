@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import logo from "./images/logo.svg";
 import cart from "./images/icon-cart.svg";
 import avatar from "./images/image-avatar.png";
@@ -47,7 +47,7 @@ function Nav({ click, setClick }) {
             <ul className="flex justify-between md:flex-row flex-col  md:h-full md:items-center ">
               <li className=" ">
                 <a
-                  href="#"
+                  href="#/"
                   className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
                 >
                   Collections
@@ -55,7 +55,7 @@ function Nav({ click, setClick }) {
               </li>
               <li className="">
                 <a
-                  href="#"
+                  href="#/"
                   className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
                 >
                   Men
@@ -63,7 +63,7 @@ function Nav({ click, setClick }) {
               </li>
               <li className="">
                 <a
-                  href="#"
+                  href="#/"
                   className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
                 >
                   Women
@@ -71,7 +71,7 @@ function Nav({ click, setClick }) {
               </li>
               <li className="">
                 <a
-                  href="#"
+                  href="#/"
                   className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
                 >
                   About
@@ -79,7 +79,7 @@ function Nav({ click, setClick }) {
               </li>
               <li className="">
                 <a
-                  href="#"
+                  href="#/"
                   className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
                 >
                   Contact
