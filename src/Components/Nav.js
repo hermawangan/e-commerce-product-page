@@ -104,7 +104,7 @@ function Nav({ click, setClick }) {
             className="h-7 cursor-pointer"
           />
           {click ? (
-            <span className="text-white text-xs absolute top-1 right-16 border-2 border-primary-Orange rounded-full bg-primary-Orange w-4 h-4 text-center">
+            <span className="text-white text-xs absolute top-1 right-16 border-2 border-primary-Orange rounded-full bg-primary-Orange w-4 h-4 text-center md:right-80">
               1
             </span>
           ) : null}
