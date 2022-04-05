@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /ecommerce-product-page-main
+/build
 
 # testing
 /coverage
