@@ -20,7 +20,7 @@ function Cart({ price, number, disc, click, setClick }) {
   };
 
   return (
-    <div className=" absolute   bg-white border-2 border-solid w-11/12 h-2/5 md:h-1/3 top-14 left-4 rounded-md md:w-1/3 lg:left-1/2 md:left-2/3 md:top-16">
+    <div className=" absolute   bg-white border-2 border-solid w-11/12 h-2/5 md:h-1/3 top-14 left-4 rounded-md md:w-1/3 lg:left-1/2 md:left-2/3 md:top-16 z-20">
       <h4 className="text-bold border-b-2 border-solid p-4 font-bold">Cart</h4>
       {click ? (
         <>

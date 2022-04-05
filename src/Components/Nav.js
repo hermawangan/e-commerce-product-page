@@ -31,61 +31,68 @@ function Nav({ click, setClick }) {
             </button>
             <img src={logo} alt="brand logo" className="w-1/2 h-1/2  px-2" />
           </div>
+
           <div
-            className={` bg-white  md:block border-2 border-solid md:border-none  ${
-              burgerClick ? "block absolute h-full w-2/3" : "hidden"
+            className={`  md:block   ${
+              burgerClick
+                ? "block absolute h-full w-full z-30 bg-Neutral-dim"
+                : "hidden"
             } md:static md:w-7/12 `}
           >
-            {burgerClick ? (
-              <button
-                onClick={clickHandler}
-                className={`${burgerClick ? "block" : "hidden"} md:hidden`}
-              >
-                X
-              </button>
-            ) : null}
-            <ul className="flex justify-between md:flex-row flex-col  md:h-full md:items-center ">
-              <li className=" ">
-                <a
-                  href="#/"
-                  className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
+            <div className=" h-full bg-white w-1/2 md:w-full border-2 border-solid md:border-none">
+              {burgerClick ? (
+                <button
+                  onClick={clickHandler}
+                  className={`${
+                    burgerClick ? "block m-2" : "hidden"
+                  } md:hidden`}
                 >
-                  Collections
-                </a>
-              </li>
-              <li className="">
-                <a
-                  href="#/"
-                  className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
-                >
-                  Men
-                </a>
-              </li>
-              <li className="">
-                <a
-                  href="#/"
-                  className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
-                >
-                  Women
-                </a>
-              </li>
-              <li className="">
-                <a
-                  href="#/"
-                  className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
-                >
-                  About
-                </a>
-              </li>
-              <li className="">
-                <a
-                  href="#/"
-                  className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
+                  X
+                </button>
+              ) : null}
+              <ul className="flex justify-between md:flex-row flex-col  md:h-full md:items-center  ">
+                <li className="p-2 md:p-0">
+                  <a
+                    href="#/"
+                    className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
+                  >
+                    Collections
+                  </a>
+                </li>
+                <li className="p-2 md:p-0">
+                  <a
+                    href="#/"
+                    className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
+                  >
+                    Men
+                  </a>
+                </li>
+                <li className="p-2 md:p-0">
+                  <a
+                    href="#/"
+                    className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
+                  >
+                    Women
+                  </a>
+                </li>
+                <li className="p-2 md:p-0">
+                  <a
+                    href="#/"
+                    className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
+                  >
+                    About
+                  </a>
+                </li>
+                <li className="p-2 md:p-0">
+                  <a
+                    href="#/"
+                    className="hover:border-b-primary-Orange hover:border-b-2 md:pb-3"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -96,7 +103,11 @@ function Nav({ click, setClick }) {
             onClick={mouseHover}
             className="h-7 cursor-pointer"
           />
-          {click ? <span>1</span> : null}
+          {click ? (
+            <span className="text-white text-xs absolute top-1 right-16 border-2 border-primary-Orange rounded-full bg-primary-Orange w-4 h-4 text-center">
+              1
+            </span>
+          ) : null}
           <img
             src={avatar}
             alt="user avatar"

@@ -47,13 +47,13 @@ function ImageLightbox({ src = 0, alt, Wrapper = "div" }) {
   return (
     <Wrapper className="md:relative md:w-1/3 md:left-1/3">
       <button
-        className="left-button absolute top-1/3 left-5 bg-white rounded-full w-9 h-9 flex justify-center items-center border-2 border-white md:-left-4"
+        className="left-button absolute top-1/3 left-5 bg-white rounded-full w-9 h-9 flex justify-center items-center border-2 border-white md:-left-4 z-10"
         onClick={prev}
       >
         <img src={prevIcon} alt="prev Icon" />
       </button>
       <button
-        className="right-button absolute right-5 top-1/3 bg-white rounded-full w-9 h-9 flex justify-center items-center border-2 border-white md:-right-4"
+        className="right-button absolute right-5 top-1/3 bg-white rounded-full w-9 h-9 flex justify-center items-center border-2 border-white md:-right-4 z-10"
         onClick={next}
       >
         <img src={nextIcon} alt="next Icon" />
@@ -67,7 +67,7 @@ function ImageLightbox({ src = 0, alt, Wrapper = "div" }) {
                   src={slide.image}
                   key={slide.id}
                   alt="shoe"
-                  className="md:rounded-xl"
+                  className="md:rounded-xl z-0"
                 />
               )}
             </div>
