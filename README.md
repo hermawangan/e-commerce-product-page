@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://ecommerce-shoe-product.netlify.app/)
+- Solution URL: [Click here to see the solution](https://your-solution-url.com)
+- Live Site URL: [Click here to see the demo](https://ecommerce-shoe-product.netlify.app/)
 
 ## My process
 
@@ -69,4 +69,4 @@ After creating this project, I realized that my skill in building project not ve
 - LinkedIn - [@hermawangan](https://www.linkedin.com/in/hermawan-gan)
 - Github - [@hermawangan](https://github.com/hermawangan)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
